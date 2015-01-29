@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CC848EC1A7A497800B453BC /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC848EA1A7A497800B453BC /* EventKit.framework */; };
+		6CC848ED1A7A497800B453BC /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC848EB1A7A497800B453BC /* EventKitUI.framework */; };
+		6CC848EF1A7A499800B453BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC848EE1A7A499800B453BC /* UIKit.framework */; };
+		6CC848F11A7A49A900B453BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC848F01A7A49A900B453BC /* Foundation.framework */; };
+		6CC848F31A7A49B200B453BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC848F21A7A49B200B453BC /* CoreGraphics.framework */; };
 		6CC937BC1A7A14DD00A8BF41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC937BB1A7A14DD00A8BF41 /* main.m */; };
 		6CC937BF1A7A14DD00A8BF41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC937BE1A7A14DD00A8BF41 /* AppDelegate.m */; };
 		6CC937C21A7A14DD00A8BF41 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC937C11A7A14DD00A8BF41 /* ViewController.m */; };
@@ -27,6 +32,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6CC848EA1A7A497800B453BC /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		6CC848EB1A7A497800B453BC /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		6CC848EE1A7A499800B453BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6CC848F01A7A49A900B453BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6CC848F21A7A49B200B453BC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6CC937B61A7A14DC00A8BF41 /* MultiCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CC937BA1A7A14DD00A8BF41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CC937BB1A7A14DD00A8BF41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +57,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CC848F31A7A49B200B453BC /* CoreGraphics.framework in Frameworks */,
+				6CC848F11A7A49A900B453BC /* Foundation.framework in Frameworks */,
+				6CC848EF1A7A499800B453BC /* UIKit.framework in Frameworks */,
+				6CC848EC1A7A497800B453BC /* EventKit.framework in Frameworks */,
+				6CC848ED1A7A497800B453BC /* EventKitUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,11 @@
 		6CC937AD1A7A14DC00A8BF41 = {
 			isa = PBXGroup;
 			children = (
+				6CC848F21A7A49B200B453BC /* CoreGraphics.framework */,
+				6CC848F01A7A49A900B453BC /* Foundation.framework */,
+				6CC848EE1A7A499800B453BC /* UIKit.framework */,
+				6CC848EA1A7A497800B453BC /* EventKit.framework */,
+				6CC848EB1A7A497800B453BC /* EventKitUI.framework */,
 				6CC937B81A7A14DC00A8BF41 /* MultiCalendar */,
 				6CC937D21A7A14DD00A8BF41 /* MultiCalendarTests */,
 				6CC937B71A7A14DC00A8BF41 /* Products */,
@@ -297,7 +317,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -332,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -344,6 +364,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MultiCalendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MultiCalendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -412,6 +434,7 @@
 				6CC937DB1A7A14DD00A8BF41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6CC937DC1A7A14DD00A8BF41 /* Build configuration list for PBXNativeTarget "MultiCalendarTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +443,7 @@
 				6CC937DE1A7A14DD00A8BF41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
