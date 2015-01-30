@@ -12,11 +12,16 @@
 
 @end
 
-@implementation AppDelegate
 
+
+@implementation AppDelegate
+@synthesize ruleName;
+@synthesize array_src,array_dest;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    array_src = [[NSMutableArray alloc]init];
+    array_dest = [[NSMutableArray alloc]init];
     return YES;
 }
 

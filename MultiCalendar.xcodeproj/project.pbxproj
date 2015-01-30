@@ -19,6 +19,13 @@
 		6CC937C71A7A14DD00A8BF41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CC937C61A7A14DD00A8BF41 /* Images.xcassets */; };
 		6CC937CA1A7A14DD00A8BF41 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CC937C81A7A14DD00A8BF41 /* LaunchScreen.xib */; };
 		6CC937D61A7A14DD00A8BF41 /* MultiCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC937D51A7A14DD00A8BF41 /* MultiCalendarTests.m */; };
+		6CE3A1401A7B570800343EB3 /* AddNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE3A13F1A7B570800343EB3 /* AddNameViewController.m */; };
+		6CE3A1431A7B5CB500343EB3 /* SourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE3A1421A7B5CB500343EB3 /* SourceViewController.m */; };
+		6CE3A1491A7B898700343EB3 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE3A1481A7B898700343EB3 /* DBManager.m */; };
+		6CE3A14C1A7B89D300343EB3 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE3A14A1A7B89D300343EB3 /* libsqlite3.0.dylib */; };
+		6CE3A14D1A7B89D300343EB3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE3A14B1A7B89D300343EB3 /* libsqlite3.dylib */; };
+		6CE3A1501A7B91A400343EB3 /* DestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE3A14F1A7B91A400343EB3 /* DestViewController.m */; };
+		6CE3A1521A7B99CA00343EB3 /* multical.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6CE3A1511A7B99CA00343EB3 /* multical.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +57,18 @@
 		6CC937CF1A7A14DD00A8BF41 /* MultiCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CC937D41A7A14DD00A8BF41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CC937D51A7A14DD00A8BF41 /* MultiCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiCalendarTests.m; sourceTree = "<group>"; };
+		6CE3A13E1A7B570800343EB3 /* AddNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNameViewController.h; sourceTree = "<group>"; };
+		6CE3A13F1A7B570800343EB3 /* AddNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNameViewController.m; sourceTree = "<group>"; };
+		6CE3A1411A7B5CB500343EB3 /* SourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceViewController.h; sourceTree = "<group>"; };
+		6CE3A1421A7B5CB500343EB3 /* SourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceViewController.m; sourceTree = "<group>"; };
+		6CE3A1441A7B7B2400343EB3 /* MyPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyPrefixHeader.pch; path = ../MyPrefixHeader.pch; sourceTree = "<group>"; };
+		6CE3A1471A7B898700343EB3 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		6CE3A1481A7B898700343EB3 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		6CE3A14A1A7B89D300343EB3 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		6CE3A14B1A7B89D300343EB3 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		6CE3A14E1A7B91A400343EB3 /* DestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestViewController.h; sourceTree = "<group>"; };
+		6CE3A14F1A7B91A400343EB3 /* DestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestViewController.m; sourceTree = "<group>"; };
+		6CE3A1511A7B99CA00343EB3 /* multical.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = multical.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CE3A14C1A7B89D300343EB3 /* libsqlite3.0.dylib in Frameworks */,
+				6CE3A14D1A7B89D300343EB3 /* libsqlite3.dylib in Frameworks */,
 				6CC848F31A7A49B200B453BC /* CoreGraphics.framework in Frameworks */,
 				6CC848F11A7A49A900B453BC /* Foundation.framework in Frameworks */,
 				6CC848EF1A7A499800B453BC /* UIKit.framework in Frameworks */,
@@ -78,6 +99,8 @@
 		6CC937AD1A7A14DC00A8BF41 = {
 			isa = PBXGroup;
 			children = (
+				6CE3A14A1A7B89D300343EB3 /* libsqlite3.0.dylib */,
+				6CE3A14B1A7B89D300343EB3 /* libsqlite3.dylib */,
 				6CC848F21A7A49B200B453BC /* CoreGraphics.framework */,
 				6CC848F01A7A49A900B453BC /* Foundation.framework */,
 				6CC848EE1A7A499800B453BC /* UIKit.framework */,
@@ -105,6 +128,12 @@
 				6CC937BE1A7A14DD00A8BF41 /* AppDelegate.m */,
 				6CC937C01A7A14DD00A8BF41 /* ViewController.h */,
 				6CC937C11A7A14DD00A8BF41 /* ViewController.m */,
+				6CE3A13E1A7B570800343EB3 /* AddNameViewController.h */,
+				6CE3A13F1A7B570800343EB3 /* AddNameViewController.m */,
+				6CE3A1411A7B5CB500343EB3 /* SourceViewController.h */,
+				6CE3A1421A7B5CB500343EB3 /* SourceViewController.m */,
+				6CE3A14E1A7B91A400343EB3 /* DestViewController.h */,
+				6CE3A14F1A7B91A400343EB3 /* DestViewController.m */,
 				6CC937C31A7A14DD00A8BF41 /* Main.storyboard */,
 				6CC937C61A7A14DD00A8BF41 /* Images.xcassets */,
 				6CC937C81A7A14DD00A8BF41 /* LaunchScreen.xib */,
@@ -116,6 +145,9 @@
 		6CC937B91A7A14DD00A8BF41 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6CE3A1511A7B99CA00343EB3 /* multical.sqlite */,
+				6CE3A1471A7B898700343EB3 /* DBManager.h */,
+				6CE3A1481A7B898700343EB3 /* DBManager.m */,
 				6CC937BA1A7A14DD00A8BF41 /* Info.plist */,
 				6CC937BB1A7A14DD00A8BF41 /* main.m */,
 			);
@@ -134,6 +166,7 @@
 		6CC937D31A7A14DD00A8BF41 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6CE3A1441A7B7B2400343EB3 /* MyPrefixHeader.pch */,
 				6CC937D41A7A14DD00A8BF41 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -221,6 +254,7 @@
 			files = (
 				6CC937C51A7A14DD00A8BF41 /* Main.storyboard in Resources */,
 				6CC937CA1A7A14DD00A8BF41 /* LaunchScreen.xib in Resources */,
+				6CE3A1521A7B99CA00343EB3 /* multical.sqlite in Resources */,
 				6CC937C71A7A14DD00A8BF41 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,8 +274,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CC937C21A7A14DD00A8BF41 /* ViewController.m in Sources */,
+				6CE3A1431A7B5CB500343EB3 /* SourceViewController.m in Sources */,
 				6CC937BF1A7A14DD00A8BF41 /* AppDelegate.m in Sources */,
+				6CE3A1491A7B898700343EB3 /* DBManager.m in Sources */,
+				6CE3A1501A7B91A400343EB3 /* DestViewController.m in Sources */,
 				6CC937BC1A7A14DD00A8BF41 /* main.m in Sources */,
+				6CE3A1401A7B570800343EB3 /* AddNameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +401,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MyPrefixHeader.pch";
 				INFOPLIST_FILE = MultiCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -374,6 +414,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MyPrefixHeader.pch";
 				INFOPLIST_FILE = MultiCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

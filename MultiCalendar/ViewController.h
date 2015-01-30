@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "DBManager.h"
 
 @interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
-    IBOutlet UITableView *tblViewCalendar;
-    NSMutableArray *arrayCalendar;
+    IBOutlet UITableView *tblViewRules;
+    NSMutableArray *arrayRules;
 }
 
-@property(nonatomic,strong)IBOutlet UITableView *tblViewCalendar;
+@property(nonatomic,strong)IBOutlet UITableView *tblViewRules;
+-(IBAction)moveToCreateRule:(id)sender;
 
 @end
 

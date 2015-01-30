@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DBManager.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    NSString *ruleName;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) NSString *ruleName;
+@property (strong,nonatomic)  NSMutableArray *array_src;
+@property (strong,nonatomic)  NSMutableArray *array_dest;
 
 
 @end

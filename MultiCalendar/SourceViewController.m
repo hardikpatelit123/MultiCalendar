@@ -1,65 +1,40 @@
 //
-//  ViewController.m
+//  SourceViewController.m
 //  MultiCalendar
 //
-//  Created by Hardik Patel on 29/01/15.
+//  Created by Pratik Shah on 30/01/15.
 //  Copyright (c) 2015 Pratik Shah. All rights reserved.
 //
 
-#import "ViewController.h"
-#import <EventKit/EventKit.h>
-#import <EventKitUI/EventKitUI.h>
-#import "AppDelegate.h"
+#import "SourceViewController.h"
 
-
-@interface ViewController ()<EKEventEditViewDelegate>
-// EKEventStore instance associated with the current Calendar application
-@property (nonatomic, strong) EKEventStore *eventStore;
-
+@interface SourceViewController ()<EKEventEditViewDelegate>
 // Default calendar associated with the above event store
 @property (nonatomic, strong) EKCalendar *defaultCalendar;
-
-// Array of all events happening within the next 24 hours
-@property (nonatomic, strong) NSMutableArray *eventsList;
-
-@property (nonatomic, strong) DBManager *dbManager;
+@property (nonatomic, strong) EKEventStore *eventStore;
 @end
 
-@implementation ViewController
+@implementation SourceViewController
 
-@synthesize tblViewRules;
+@synthesize tblViewCalendar;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Initialize the event store
-    self.eventStore = [[EKEventStore alloc] init];
-    // Initialize the events list
-    self.eventsList = [[NSMutableArray alloc] initWithCapacity:0];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"multical.sqlite"];
-    NSString *qry_getrules = [NSString stringWithFormat:@"select * from rules"]; ;
-    [self getRulesList:qry_getrules];
-    
-    
+   
+    // Do any additional setup after loading the view.
 }
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    // Check whether we are authorized to access Calendar
-    //[self checkEventStoreAccessForCalendar];
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-//$(SRCROOT)/MyPrefixHeader.pch
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    // Check whether we are authorized to access Calendar
+    [self checkEventStoreAccessForCalendar];
+}
 
 #pragma mark -
 #pragma mark Access Calendar
@@ -93,7 +68,6 @@
     }
 }
 
-
 // Prompt the user for access to their Calendar
 -(void)requestCalendarAccess
 {
@@ -101,7 +75,7 @@
      {
          if (granted)
          {
-             ViewController * __weak weakSelf = self;
+             SourceViewController * __weak weakSelf = self;
              // Let's ensure that our code will be executed from the main queue
              dispatch_async(dispatch_get_main_queue(), ^{
                  // The user has granted access to their Calendar; let's populate our UI with all events occuring in the next 24 hours.
@@ -119,14 +93,28 @@
     self.defaultCalendar = self.eventStore.defaultCalendarForNewEvents;
     
     //get Data for the Total Listed Calander
-   arrayRules = [[NSMutableArray alloc]init];
-    
-    
-  //  arrayRules = [[NSMutableArray alloc]initWithObjects:@"Rule1",@"Rule2",@"Rule3",@"Rule4", nil];
-   // arrayRules = [self listCalendars];
-     // Reload Table after getting Data
-    [self.tblViewRules reloadData];
+    appDelegate.array_src = [[NSMutableArray alloc]init];
+    appDelegate.array_src = [self listCalendars];
+    // Reload Table after getting Data
+    [self.tblViewCalendar reloadData];
 }
+
+#pragma mark - Private method implementation
+-(NSMutableArray *)listCalendars{
+    EKEventStore * eventStore = [[EKEventStore alloc] init];
+    EKEntityType type = EKEntityTypeEvent;// EKEntityTypeReminder or EKEntityTypeEvent
+    NSArray * calendars = [eventStore calendarsForEntityType:type];
+    NSMutableArray *arrayTemp = [[NSMutableArray alloc]init];
+    
+    for (EKCalendar *thisCalendar in calendars) {
+        if (thisCalendar.allowsContentModifications)
+        {
+            [arrayTemp addObject:thisCalendar.title];
+        }
+    }
+    return arrayTemp;
+}
+
 
 
 
@@ -138,23 +126,15 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [arrayRules count];
+    return [appDelegate.array_src count];
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventCell" forIndexPath:indexPath];
     
-    NSInteger indexOfruleid = [self.dbManager.arrColumnNames indexOfObject:@"rule_id"];
-    NSInteger indexOfrulename = [self.dbManager.arrColumnNames indexOfObject:@"rule_name"];
-    
-    // Set the loaded data to the appropriate cell labels.
-    NSString *strRulesName = @"";
-    strRulesName = [[arrayRules objectAtIndex:indexPath.row] objectAtIndex:indexOfrulename];
-    
-    cell.textLabel.text = strRulesName;
+    cell.textLabel.text = [appDelegate.array_src objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -163,17 +143,14 @@
     return 44.0;
 }
 
-#pragma mark -button action
-
--(IBAction)moveToCreateRule:(id)sender{
-    NSLog(@"Go to Next View");
-      [self performSegueWithIdentifier:@"moveToAddName" sender:self];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    appDelegate.array_dest = [[NSMutableArray alloc]init];
+    
+     [appDelegate.array_src removeObjectAtIndex:indexPath.row] ;
+    appDelegate.array_dest = [appDelegate.array_src copy];
+    [self performSegueWithIdentifier:@"moveToDestination" sender:self];
 }
 
-#pragma mark -General Function
--(void)getRulesList:(NSString *)strData{
-    arrayRules  = [[NSMutableArray alloc]initWithArray:[self.dbManager loadDataFromDB:strData]];
-    [tblViewRules reloadData];
-    //[self.dbManager loadDataFromDB:strData];
-}
+
+
 @end
